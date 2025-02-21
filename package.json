@@ -1,10 +1,13 @@
 {
-    "name": "github-stargazers-tracker",
-    "version": "1.0.0",
-    "description": "Track GitHub repository stargazers",
-    "main": "scripts/fetch-stargazers.js",
-    "scripts": {
-      "fetch": "node scripts/fetch-stargazers.js"
-    },
-    "dependencies": {}
-  }
+     "name": "github-stargazers-tracker",
+     "version": "1.0.0",
+     "description": "Track GitHub repository stargazers",
+     "main": "scripts/fetch-stargazers.js",
+     "scripts": {
+          "fetch": "node scripts/fetch-stargazers.js",
+          "test:keploy": "jest --coverage --coverageReporters=text --coverageReporters=cobertura --collectCoverageFrom='./**/*.{js,jsx,ts,tsx}'"
+     },
+     "devDependencies": {
+          "jest": "^29.7.0"
+     }
+}

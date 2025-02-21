@@ -3,7 +3,7 @@ const path = require('path');
 const https = require('https');
 
 const GITHUB_API_URL = "https://api.github.com";
-const GH_TOKEN = process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_TOKEN;
 const REPOSITORIES = process.env.REPOSITORIES.split(','); // Comma-separated repo list
 const BATCH_SIZE = 50;
 const DELAY_BETWEEN_REQUESTS = 2000;
