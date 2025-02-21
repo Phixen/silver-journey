@@ -8,6 +8,11 @@ on:
 jobs:
   fetch-stargazers:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for actions/upload-pages-artifact
+      pages: write     # Required for actions/deploy-pages
+      id-token: write  # Required for actions/deploy-pages
+      pull-requests: write  # Required for actions/deploy-pages
 
     steps:
       - uses: actions/checkout@v4
