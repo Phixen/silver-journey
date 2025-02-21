@@ -102,8 +102,8 @@ async function processRepository(repo) {
     const enrichedStargazers = await enrichStargazersInBatches(stargazers);
 
     const repoSlug = repo.replace(/\//g, '_');
-    const csvData = generateCSV(enrichedStargazers);
-    await fs.writeFile(path.join(process.cwd(), 'data', `${repoSlug}_stargazers.csv`), csvData);
+    // const csvData = generateCSV(enrichedStargazers);
+    // await fs.writeFile(path.join(process.cwd(), 'data', `${repoSlug}_stargazers.csv`), csvData);
 
     const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
     const recentStargazers = enrichedStargazers.filter(s => new Date(s.starred_at) >= twentyFourHoursAgo);
