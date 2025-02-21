@@ -8,11 +8,11 @@ on:
 jobs:
   fetch-stargazers:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Required for actions/upload-pages-artifact
-      pages: write     # Required for actions/deploy-pages
-      id-token: write  # Required for actions/deploy-pages
-      pull-requests: write  # Required for actions/deploy-pages
+    # permissions:
+    #   contents: write  # Required for actions/upload-pages-artifact
+    #   pages: write     # Required for actions/deploy-pages
+    #   id-token: write  # Required for actions/deploy-pages
+    #   pull-requests: write  # Required for actions/deploy-pages
 
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
 
       - name: Run stargazers fetch script
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           REPOSITORIES: "keploy/keploy"
         run: node scripts/fetch-stargazers.js
 
